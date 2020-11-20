@@ -47,7 +47,7 @@ class GetMusicSerializer(serializers.ModelSerializer):
 
 
 class GetArtistSerializer(serializers.ModelSerializer):
-    musics = MusicSerializer(many=True)
+    musics = GetMusicSerializer(many=True)
     class Meta:
         model = Artist
         fields = ('id', 'name', 'musics', 'image')
