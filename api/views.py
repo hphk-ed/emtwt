@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -122,3 +122,7 @@ def search(request, keyword):
         'tags': TagSerializer(tags, many=True).data,
     }
     return Response(context)
+
+
+def index(request):
+    return HttpResponse('Welcome')

@@ -131,8 +131,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # CORS
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
+    config('CORS_ALLOWED_URL1', default="http://127.0.0.1:8080"),
+    config('CORS_ALLOWED_URL2', default="http://localhost:8080"),
 ]
 
 # Heroku: Update database configuration from $DATABASE_URL.
