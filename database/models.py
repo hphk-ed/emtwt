@@ -3,7 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Artist(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     image = models.TextField(blank=True, default='')
     flo_id = models.IntegerField(blank=True, default=0)
 
@@ -12,14 +12,14 @@ class Artist(models.Model):
 
 
 class Genre(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
 
 
 class Album(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
     image = models.TextField(blank=True, default='')
     release_date = models.DateField()
     flo_id = models.IntegerField(blank=True, default=0)
@@ -29,14 +29,14 @@ class Album(models.Model):
         
 
 class Tag(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
 
 
 class Music(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=300)
     lyrics = models.TextField(blank=True, default='')
     artists = models.ManyToManyField(Artist, related_name='musics')
     featuring_artists = models.ManyToManyField(Artist, related_name='featuring_musics', blank=True)
@@ -52,7 +52,7 @@ class Music(models.Model):
 
 
 class Hashtag(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.name
