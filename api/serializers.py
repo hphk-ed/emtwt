@@ -62,7 +62,7 @@ class GetAlbumSerializer(serializers.ModelSerializer):
 
 class GetMusicDetailSerializer(serializers.ModelSerializer):
     artists = GetArtistSerializer(many=True)
-    album = AlbumSerializer()
+    album = GetAlbumSerializer()
     class Meta:
         model = Music
         fields = ('id', 'name', 'artists', 'lyrics', 'tags', 'fake_like', 'album', )
