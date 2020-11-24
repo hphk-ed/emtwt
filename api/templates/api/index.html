@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h1>Index</h1>
+  <img src="{% static 'api/peng.jpg' %}" alt="">
+  <h2>{{ msg }}</h2>
+  <i class="fas fa-meteor"></i>
+  <i class="fas fa-star" style="color: yellow;"></i>
+  <i class="far fa-user-circle"></i>
+{% endblock %}

@@ -125,4 +125,7 @@ def search(request, keyword):
 
 
 def index(request):
-    return HttpResponse('Welcome')
+    context = {
+        'msg': 'Hello World!!'
+    }
+    return render(request, 'api/index.html', context)
